@@ -26,10 +26,11 @@ export default function BookDetails() {
                     <img
                         src={book.volumeInfo?.imageLinks?.thumbnail}
                         alt={book.volumeInfo?.title || "Book cover"}
-                        className="w-60 h-auto object-cover rounded shadow"
+                        className="w-100 h-120 object-cover rounded shadow"
                     />
                     <div>
                         <h2 className="text-2xl font-bold mb-2">{book.volumeInfo?.title}</h2>
+                        <p className='font-bold'>Author:<span className='text-blue-400'> {book.volumeInfo?.authors}</span></p>
                         <p className="text-gray-700">
                             {book.volumeInfo?.description || "No description available."}
                         </p>

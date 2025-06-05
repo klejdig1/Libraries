@@ -6,6 +6,7 @@ export default function BookDetails() {
     const { id } = useParams();
     const { searchResults } = useContext(BookContext);
     const navigate = useNavigate();
+    console.log(searchResults)
 
     const book = searchResults.find(book => book.id === id);
 

@@ -10,7 +10,7 @@ function BookList({ data }) {
     if (!title || !imageLinks?.thumbnail) return null;
 
     function handleClick() {
-        navigate(`/book/:${data.id}`)
+        navigate(`/book/${data.id}`);
 
     }
 

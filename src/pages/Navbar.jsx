@@ -2,7 +2,6 @@ import {useContext, useState} from "react";
 import {BookContext} from "../context/BookContext.jsx";
 import {HiSearch} from "react-icons/hi";
 import {useNavigate} from "react-router-dom";
-import Spinner from "../components/Spinner.jsx";
 
 export default function Navbar() {
     const [query, setQuery] = useState("");
@@ -11,13 +10,14 @@ export default function Navbar() {
 
 
     const handleSearch = async () => {
-        if (!query) {
-            navigate('/');
+        if (!query.trim()) {
             clearSearch()
+            navigate('/');
             return;
         }
 
         await fetchBooks(query);
+        navigate('/')
         setQuery('');
     };
 

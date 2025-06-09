@@ -10,7 +10,7 @@ export default function Home() {
             {searchResults.length === 0 ? (
                 <p className="text-gray-500">No books found. Try searching something.</p>
             ) : (
-                <div className="flex flex-wrap gap-3 justify-start">
+                <div className="flex flex-wrap gap-5 justify-center items-center">
                     {searchResults.slice(0, 10).map((data) => (
                         <BookList key={data.id} data={data} />
                     ))}

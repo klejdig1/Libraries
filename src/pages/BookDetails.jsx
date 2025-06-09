@@ -30,8 +30,10 @@ export default function BookDetails() {
                     />
                     <div>
                         <h2 className="text-2xl font-bold mb-2">{book.volumeInfo?.title}</h2>
-                        <p className='font-bold'>Author:<span className='text-blue-400'> {book.volumeInfo?.authors}</span></p>
-                        <p className="text-gray-700">
+                        {book.volumeInfo?.authors ?
+                            <p className='font-bold'>Author:<span
+                            className='text-blue-400'> {book.volumeInfo?.authors}</span></p>
+                        :''}                        <p className="text-gray-700">
                             {book.volumeInfo?.description || "No description available."}
                         </p>
                     </div>

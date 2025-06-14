@@ -10,11 +10,19 @@ export default function BookDetails() {
 
     const book = searchResults.find(book => book.id === id);
 
+    // display: flex
+    // ;
+    // flex: 1;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: end
+
+
     return (
-        <div className="p-6">
+        <div className="p-6 flex flex-col items-end justify-center">
             <button
                 onClick={() => navigate(-1)}
-                className="mb-4 px-4 py-2 bg-blue-500 text-white rounded"
+                className="mb-4 px-4 py-2 bg-blue-500 text-white rounded "
             >
                 Go back
             </button>
@@ -22,7 +30,7 @@ export default function BookDetails() {
             {!book ? (
                 <p className="text-center mt-8">Book not found.</p>
             ) : (
-                <div className="flex gap-4">
+                <div className="flex gap-4 flex-col">
                     <img
                         src={book.volumeInfo?.imageLinks?.thumbnail}
                         alt={book.volumeInfo?.title || "Book cover"}

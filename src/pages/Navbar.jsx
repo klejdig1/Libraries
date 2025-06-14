@@ -24,7 +24,7 @@ export default function Navbar() {
 
     return(
         <div className='bg-gray-500 pt-4 pb-4 flex justify-between items-center'>
-            <img className='w-8 h-8 rounded-[30px] ml-3' src='/logo.jpg' alt='logo'/>
+            <img onClick={()=>navigate('/')} className=' cursor-pointer w-10 h-10 rounded-[30px] ml-3' src='/logo.jpg' alt='logo'/>
             <div className='flex items-center justify-end px-2'>
             <input className='p-1.5 w-45 rounded-xl  bg-white border-none outline-none ring-0 focus:ring-0 focus:outline-none' placeholder='Search...' value={query} onKeyDown={event => {if (event.key === "Enter") handleSearch()}} onChange={event => setQuery(event.target.value)}/>
             <button className='rounded-r-xl px-4 r-16 py-3 absolute bg-red-500 text-white text-sm' onClick={handleSearch}><HiSearch/></button>
